@@ -1,0 +1,60 @@
+body {
+  background-image: url("../images/VB.png");
+  background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+}
+
+h1 {
+  background-color: rgba(255, 0, 0, 0.9);
+  color: aliceblue;
+  text-align: center;
+  border-radius: 0.25em;
+  padding: 0.2em 0 0.2em;
+  margin: 5.5em 20em 1em;
+}
+
+table {
+  padding: 0.2em;
+  margin: 2em auto 2em;
+  background-color: rgba(240, 248, 255, 0.7);
+  border-radius: 0.5em;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  padding: 0.5em 0.4em 0.5em 0.4em;
+  background-color: green;
+  color: aliceblue;
+}
+
+td {
+  padding: 0.3em 0.4em 0.3em 0.4em;
+  text-align: center;
+  border: solid 0.5px green;
+}
+
+@media only screen and (max-width: 450px) {
+  table {
+    padding: 0.01em;
+    margin: 0.7em auto 0.7em;
+  }
+
+  h1 {
+    padding: 0.2em 0 0.2em;
+    margin: 3.5em 7em 0.1em;
+    font-size: 1.2rem;
+  }
+
+  th {
+    padding: 0.01em 0.01em 0.01em 0.01em;
+    font-size: 0.75rem;
+  }
+
+  td {
+    padding: 0.01em 0.01em 0.01em 0.01em;
+    border: solid 0.1px green;
+    font-size: 0.75rem;
+  }
+}

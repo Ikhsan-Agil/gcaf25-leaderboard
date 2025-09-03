@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+  </head>
+  <body>
+    <h1>GCAF Leaderboard</h1>
+    <section class="Leaderboard"></section>
+    <table>
+      <tr>
+        <th>Rank</th>
+        <th>Student Name</th>
+        <th>Skill Badges Completed</th>
+        <th>Arcade Games Completed</th>
+        <th>Arcade Trivia Games Completed</th>
+        <th>Total Badges</th>
+        <th>Milestone Achieved</th>
+        <th>Points</th>
+      </tr>
+      {% for i in data %}
+      <tr>
+        <td>{{ i["rank"] }}</td>
+        <td>{{ i["student_name"] }}</td>
+        <td>{{ i["skill_badges_completed"] }}</td>
+        <td>{{ i["arcade_games_completed"] }}</td>
+        <td>{{ i["arcade_trivia_games_completed"] }}</td>
+        <td>{{ i["total_badges"] }}</td>
+        <td>{{ i["milestone_achieved"] }}</td>
+        <td>{{ i["points"] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
