@@ -1,12 +1,14 @@
 from flask import Flask, render_template
 import data_fetch as fetch
+import datetime
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
     data = fetch.file_data
-    return render_template("index.html", data = data)
+    date = datetime.datetime.now().strftime("%d-%m-%Y at %H:%M:%S")
+    return render_template("index.html", data = data, date = date)
 
 if __name__ == "__main__":
     app.run(host="localhost", port=8080)
