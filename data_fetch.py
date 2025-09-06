@@ -1,20 +1,24 @@
 import pandas as pd
-import numpy as np
 import os
 from dotenv import load_dotenv
 import math
+import datetime
 
 load_dotenv()
+filePath = os.getenv("FILEPATH")
 
-df = pd.read_csv(os.getenv("FILEPATH"))
-#print(df.info())
+# Logic for fetch the time modified from file metadata
+file = os.open(filePath, os.O_RDONLY)
+fileModifiedDate = os.stat(file).st_mtime
+os.close(file)
 
-badgesSum=df["# Jumlah Skill Badge yang Diselesaikan"]+df["# Jumlah Game Arcade yang Diselesaikan"]+df["# Jumlah Game Trivia yang Diselesaikan"]
+date = datetime.datetime.fromtimestamp(fileModifiedDate).strftime("%A, %d %B %Y")
+
+# Read the csv file and count total badges
+df = pd.read_csv(filePath)
+badgesSum = df["# Jumlah Skill Badge yang Diselesaikan"]+df["# Jumlah Game Arcade yang Diselesaikan"]+df["# Jumlah Game Trivia yang Diselesaikan"]
 
 # Logic for count the points
-
-# pointsGet=np.floor(df["# Jumlah Skill Badge yang Diselesaikan"]/2)+df["# Jumlah Game Arcade yang Diselesaikan"]+df["# Jumlah Game Trivia yang Diselesaikan"]
-
 totalPoints = []
 for i in range(0, len(df)):
     if df["# Jumlah Game Arcade yang Diselesaikan"][i] >= 10 and df["# Jumlah Game Trivia yang Diselesaikan"][i] >= 8 and df["# Jumlah Skill Badge yang Diselesaikan"][i] >= 44 :
@@ -55,6 +59,7 @@ newDf = pd.DataFrame(
 # Sort Dataframe from points_get
 dataframe = newDf.sort_values(by=["points","total_badges"], ascending=False, ignore_index=True)
 
+# Create json to store the dataframe
 file_data = []
 for x in range(0, len(dataframe)):
     data = {
@@ -68,4 +73,3 @@ for x in range(0, len(dataframe)):
         "points": dataframe["points"][x]
     }
     file_data.append(data)
-

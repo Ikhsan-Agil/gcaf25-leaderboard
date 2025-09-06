@@ -2,3 +2,4 @@ __pycache__
 .venv
 gcaf-excel
 .env
+test.py
