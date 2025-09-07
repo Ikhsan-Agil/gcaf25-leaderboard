@@ -27,12 +27,25 @@ h2 {
   margin: 0;
 }
 
+.leaderboard {
+  margin: 2em auto 2em;
+  height: 44em;
+  width: 100em;
+  overflow-y: auto;
+  overflow-x: auto;
+  /* scroll-snap-type: y mandatory; */
+}
+
+.leaderboard > table {
+  width: 100%;
+}
+
 table {
   padding: 0.2em;
   background-color: rgba(240, 248, 255, 0.7);
-  border-radius: 0.5em;
-  margin: 2em auto 2em;
+  /* border-radius: 0.5em; */
 
+  width: 100em;
   align-items: center;
 }
 
@@ -44,6 +57,10 @@ th {
   color: aliceblue;
 }
 
+/* table tr {
+  scroll-snap-align: start;
+} */
+
 td {
   padding: 0.3em 0.4em 0.3em 0.4em;
   text-align: center;
@@ -51,11 +68,6 @@ td {
 }
 
 @media only screen and (max-width: 450px) {
-  table {
-    padding: 0.01em;
-    margin: 0.7em auto 1.3em;
-  }
-
   h1 {
     padding: 0.2em 0 0.2em;
     /* margin: 3.5em 7em 0.1em; */
@@ -67,20 +79,128 @@ td {
     font-size: 1.5rem;
   }
 
-  .leaderboard {
+  /* .leaderboard {
     overflow-x: scroll;
+  } */
+
+  .leaderboard {
+    margin: 2em auto 2em;
+    height: 65.5em;
+    width: 36em;
+    overflow-y: auto;
+    overflow-x: auto;
+    scroll-snap-type: y mandatory;
+    background-color: none;
+  }
+
+  table {
+    padding: 0.01em;
+    margin: 0.7em auto 1.3em;
+    width: 36em;
   }
 
   th {
     position: sticky;
     top: 0;
     padding: 0.8em;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   td {
     padding: 0.8em;
     border: solid 0.1px green;
     font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  h1 {
+    padding: 0.2em 0 0.2em;
+    /* margin: 3.5em 7em 0.1em; */
+    font-size: 1.7rem;
+  }
+
+  h2 {
+    margin-bottom: 1em;
+    font-size: 1.5rem;
+  }
+
+  /* .leaderboard {
+    overflow-x: scroll;
+  } */
+
+  .leaderboard {
+    margin: 2em auto 2em;
+    height: 40em;
+    width: 26em;
+    overflow-y: auto;
+    overflow-x: auto;
+    scroll-snap-type: y mandatory;
+    background-color: none;
+  }
+
+  table {
+    padding: 0.01em;
+    margin: 0.7em auto 1.3em;
+    width: 26em;
+  }
+
+  th {
+    position: sticky;
+    top: 0;
+    padding: 0.8em;
+    font-size: 1rem;
+  }
+
+  td {
+    padding: 0.8em;
+    border: solid 0.1px green;
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  h1 {
+    padding: 0.2em 0 0.2em;
+    /* margin: 3.5em 7em 0.1em; */
+    font-size: 1.7rem;
+  }
+
+  h2 {
+    margin-bottom: 1em;
+    font-size: 1.5rem;
+  }
+
+  /* .leaderboard {
+    overflow-x: scroll;
+  } */
+
+  .leaderboard {
+    margin: 2em auto 2em;
+    height: 44.5em;
+    width: 22em;
+    overflow-y: auto;
+    overflow-x: auto;
+    scroll-snap-type: y mandatory;
+    background-color: none;
+  }
+
+  table {
+    padding: 0.01em;
+    margin: 0.7em auto 1.3em;
+    width: 22em;
+  }
+
+  th {
+    position: sticky;
+    top: 0;
+    padding: 0.8em;
+    font-size: 0.9rem;
+  }
+
+  td {
+    padding: 0.8em;
+    border: solid 0.1px green;
+    font-size: 0.7rem;
   }
 }
