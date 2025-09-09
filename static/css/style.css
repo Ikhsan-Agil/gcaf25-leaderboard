@@ -67,6 +67,50 @@ td {
   border: solid 0.5px green;
 }
 
+@media only screen and (max-width: 1280px) {
+  h1 {
+    padding: 0.2em 0 0.2em;
+    /* margin: 3.5em 7em 0.1em; */
+  }
+
+  h2 {
+    margin-bottom: 1em;
+  }
+
+  /* .leaderboard {
+    overflow-x: scroll;
+  } */
+
+  .leaderboard {
+    margin: 2em auto 2em;
+    height: 50em;
+    width: 75em;
+    overflow-y: auto;
+    overflow-x: auto;
+    scroll-snap-type: y mandatory;
+    background-color: none;
+  }
+
+  table {
+    padding: 0.01em;
+    margin: 0.7em auto 1.3em;
+    width: 75em;
+  }
+
+  th {
+    position: sticky;
+    top: 0;
+    padding: 0.8em;
+    font-size: 1.2rem;
+  }
+
+  td {
+    padding: 0.8em;
+    border: solid 0.1px green;
+    font-size: 1rem;
+  }
+}
+
 @media only screen and (max-width: 450px) {
   h1 {
     padding: 0.2em 0 0.2em;
